@@ -1,4 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+/* Animation pour le hero */
+@keyframes zoomHero {
+    0% {
+        background-size: 100%;
+    }
+    100% {
+        background-size: 110%;
+    }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,11 +22,11 @@
 /* Création des valeurs que nous allons utiliser */
 * {
   --padding: 0 2rem;
-  --co-one:#206141;
-  --co-two: #fa0;
+  --co-one:#333;
+  --co-two: #752782;
   --co-tree: #f5fbf8;
   --co-white: #fff;
-  --co-dark: #333;
+  --co-dark: #222;
   --co-gris: #777;
 }
 /*Header*/
@@ -32,6 +43,7 @@
 }
 /*Nav Bars*/
 .logo {
+  height: auto;
  border-radius: 10%;
   font-size: 0.8rem;
   font-weight: 700;
@@ -40,6 +52,14 @@
   text-align: center;
   color: var( --co-one);
   padding: 0.1rem;
+}
+.logoContainer{
+  display: flex;
+  justify-content: center;
+}
+.logo img {
+ width: 2rem;
+ height: 2rem;
 }
 .logo span {
   border-top: 2px solid var( --co-two);
@@ -701,11 +721,15 @@ dialog section .product-page {
 }
 
 .hero {
-    background: linear-gradient(135deg, #d0260f 0%, #206141 100%);
+    background: linear-gradient(135deg, #d0260f69 0%, #20614072 100%), url('assets/accueil/hero-img.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: white;
     margin-top: 10px;
     padding: 100px 20px;
     text-align: center;
+    animation: zoomHero 8s ease-in-out infinite;
 }
 
 .hero h1 {
