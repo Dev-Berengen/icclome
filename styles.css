@@ -982,7 +982,9 @@ footer {
   .carte-produit .img {
     height: auto;
   }
+  
   .container {
+    justify-content: center;
     max-width: 720px;
   }
   .wrapper .footer-widget,
@@ -1065,7 +1067,7 @@ footer {
 
   .nav__list {
     justify-content: space-around;
-    column-gap: 1.9rem;
+    column-gap: 0.5rem;
   }
 }
 @media (max-width:500px) {
