@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <!-- Date de debut de création du site 18/08/2024 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    <link href="https://fonts.googleapis.com/css2?family=Petrona:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!--For  PWA  -->
+    <meta name="theme-color" content="#f5f5dc">
+    <meta name="msapplication-navbutton-color" content="#1e1043">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#f5f5dc">
+    <!--=============== Fontawesone-icones ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="styles.css">
+    <!--=============== html2canvas pour capture d'écran ===============-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <title>DAMAS | GLOBAL</title>
+</head>
+
+<body>
+    <!--=============== HEADER ===============-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="logo">
+                <a href="#" class="logo">DAMAS<br><span>GLOBAL</span> </a>
+            </div>
+            <!-- Barre de recherche -->
+            <form class="Researche">
+                <input type="text" name="nom" id="" class="recherche" placeholder="Chercher Produit ..." />
+                <button>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+            <!-- fin Barre de recherche -->
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link">
+                            <i class="fa-solid fa-shop nav__icon"></i>
+                            <span class="nav__name">Boutique</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <button id="share-btn" class="nav__link" type="button" aria-haspopup="dialog">
+                            <i class="fa-solid fa-share-nodes nav__icon"></i>
+                            <span class="nav__name">Partager</span>
+                        </button>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="about.html" class="nav__link">
+                            <i class="fa-solid fa-info nav__icon"></i>
+                            <span class="nav__name">À Propos</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- Breadcrumb -->
+        <div class="breadcrumbs container">
+            > À Propos de Nous !
+        </div>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="containers">
+                <h1>La SATISFACTION DU CLIENT NOTRE PRIORITE.</h1>
+                <p> Notre équipe dévouée travaille sans relâche pour s'assurer que
+                    chaque expérience d'achat soit agréable et mémorable.</p>
+                <a href="#demo" class="cta-button">Nous écrire</a>
+            </div>
+        </section>
+
+        <!-- Vision Section -->
+        <section class="vision">
+            <div class="containers">
+                <h2 class="section-title">Vision</h2>
+                <p class="section-subtitle">
+                    Chez DAMAS | GLOBAL, nous croyons en la satisfaction du client avant
+                    tout. Notre équipe dévouée travaille sans relâche pour s'assurer que
+                    chaque expérience d'achat soit agréable et mémorable. Nous sélectionnons
+                    soigneusement nos produits pour garantir qu'ils répondent aux normes les
+                    plus élevées de qualité et de durabilité.
+                </p>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section class="mission">
+            <div class="containers">
+                <h2 class="section-title">Mission</h2>
+                <p class="section-subtitle">
+                    Notre mission est de fournir à nos clients des produits qui enrichissent
+                    leur vie quotidienne. Que vous recherchiez des articles pour la maison,
+                    des gadgets technologiques, ou des accessoires de mode, nous avons ce
+                    qu'il vous faut.
+                </p>
+                <div class="company-info">
+                    <p>
+                        Merci de faire partie de la famille<strong> DAMAS | GLOBAL</strong>. Nous sommes impatients
+                        de vous servir et de vous aider à trouver exactement ce dont vous avez
+                        besoin.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data Insights Section -->
+        <section class="adresse">
+            <div class="container">
+                <h2 class="section-title">Adresse</h2>
+                <p class="section-subtitle">Nous somme a agoe assiyeye non loin de la staion nrl</p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value">100M+</div>
+                        <div class="stat-label">Websites Analyzed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">4M+</div>
+                        <div class="stat-label">Apps Covered</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">235M+</div>
+                        <div class="stat-label">Product SKUs</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">10Y</div>
+                        <div class="stat-label">Historical Data</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">10B</div>
+                        <div class="stat-label">Content Pages</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">250M</div>
+                        <div class="stat-label">Display Ads Tracked</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-grid">
+                    <div class="footer-section">
+                        <h3>Notre Vision</h3>
+                        <ul>
+                            <p>Vôtre statisfaction nôtre priorité !</p>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Contact :</h3>
+                        <ul>
+                            <p>+228 90 38 18 83<br>Agoè Assiyéye<br>Non loin carrefour Cool Catch</p>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Pages Social</h3>
+                        <div class="social-links">
+                            <a href="#facebook" title="Facebook">f</a>
+                            <a href="#twitter" title="Twitter">𝕏</a>
+                            <a href="#linkedin" title="WhatsApp">w</a>
+                            <a href="#instagram" title="Instagram">📷</a>
+                        </div>
+
+                        <div class="footer-bottom">
+                            <p>Togo Lome &copy; 2025</p>
+                        </div>
+                    </div>
+        </footer>
+
+        <!-- Boite de dialogue articles -->
+        <dialog class="one-product" id="dialog">
+            <div class="close">
+                <i class="fa-solid fa-times"></i>
+            </div>
+        </dialog>
+        <!-- Dialog de partage -->
+        <dialog id="share-dialog" class="share-dialog" aria-label="Partager le site">
+            <div class="share-header">
+                <h3>Partager</h3>
+                <button class="share-close" aria-label="Fermer">×</button>
+            </div>
+            <div class="share-body">
+                <p>Copier ou partager le lien du site :</p>
+                <div class="share-input-row">
+                    <input id="share-url" class="share-input" readonly>
+                    <button id="copy-link" class="btn action">Copier</button>
+                </div>
+                <div class="share-buttons">
+                    <a id="share-whatsapp-business" class="share-btn whatsapp" target="_blank" rel="noopener" title="Partager sur WhatsApp Business" aria-label="Partager sur WhatsApp Business">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                        <span class="share-label">WhatsApp Bus.</span>
+                    </a>
+                    <a id="share-whatsapp" class="share-btn whatsapp" target="_blank" rel="noopener" title="Partager sur WhatsApp" aria-label="Partager sur WhatsApp">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                        <span class="share-label">WhatsApp</span>
+                    </a>
+                    <a id="share-facebook" class="share-btn facebook" target="_blank" rel="noopener" title="Partager sur Facebook" aria-label="Partager sur Facebook">
+                        <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                        <span class="share-label">Facebook</span>
+                    </a>
+                    <a id="share-twitter" class="share-btn twitter" target="_blank" rel="noopener" title="Partager sur X (Twitter)" aria-label="Partager sur X (Twitter)">
+                        <i class="fa-brands fa-twitter" aria-hidden="true"></i>
+                        <span class="share-label">X</span>
+                    </a>
+                    <a id="share-gmail" class="share-btn gmail" target="_blank" rel="noopener" title="Partager par Gmail" aria-label="Partager par Gmail">
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                        <span class="share-label">Gmail</span>
+                    </a>
+                    <a id="share-instagram" class="share-btn instagram" target="_blank" rel="noopener" title="Ouvrir Instagram" aria-label="Ouvrir Instagram">
+                        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                        <span class="share-label">Instagram</span>
+                    </a>
+                    <a id="share-google-keep" class="share-btn google-keep" target="_blank" rel="noopener" title="Ouvrir Google Keep" aria-label="Ouvrir Google Keep">
+                        <i class="fa-solid fa-note-sticky" aria-hidden="true"></i>
+                        <span class="share-label">Keep</span>
+                    </a>
+                    <button id="share-screenshot" class="share-btn screenshot" title="Télécharger une capture d'écran" aria-label="Télécharger une capture d'écran">
+                        <i class="fa-solid fa-camera" aria-hidden="true"></i>
+                        <span class="share-label">Capture</span>
+                    </button>
+                    <button id="share-qr" class="share-btn qr" title="Télécharger le code QR" aria-label="Télécharger le code QR">
+                        <i class="fa-solid fa-qrcode" aria-hidden="true"></i>
+                        <span class="share-label">QR</span>
+                    </button>
+                </div>
+            </div>
+        </dialog>
+    </main>
+    <script type="module">
+        import { initializeShare } from './share.js';
+        initializeShare();
+    </script>
+
+</body>
+
+</html>
