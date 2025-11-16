@@ -166,7 +166,7 @@ header form button:hover {
   color: var(--co-dark);
 }.nav__list
 .nav__name:hover {
-  color: var(--co-dark);
+  color: var(--co-one);
 }
 
 .nav__icon  {
@@ -1067,7 +1067,7 @@ footer {
 
   .nav__list {
     justify-content: space-around;
-    column-gap: 0.5rem;
+    column-gap: 1.5rem;
   }
 }
 @media (max-width:500px) {
