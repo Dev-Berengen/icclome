@@ -2,6 +2,8 @@
 // Use relative imports so modules load correctly in the browser when
 // `index.js` is included as a module in the HTML page.
 import { data } from "./data.js";
+import { data as maritimeData } from "./maritime.js";
+import { data as centraleData } from "./centrale.js";
 import { generateDialogHTML, generateProductHTML } from "./functions.js";
 
 // selection des elements
@@ -16,20 +18,22 @@ let cartItems = [];
 // cartNumber.textContent = cartItems.length;
 let produitAffciher = data;
 
-// Code pour looper entre différents produits et les afficher
-
-const afficherProduit = (produits) => {
-  produits.forEach((product) => {
-    const productHTML = document.createElement("div");
-    productHTML.classList.add("carte-produit");
-    //Ajout de l'id pour identifier chaque produit cliqué
-    productHTML.setAttribute("data-id", product.id);
-    productHTML.innerHTML = generateProductHTML(product);
-    productsContainer.appendChild(productHTML);
+// Generic renderer for a list of items into a container using product HTML
+function renderItems(items, container) {
+  if (!container) return;
+  container.innerHTML = "";
+  items.forEach((item) => {
+    const card = document.createElement("div");
+    card.classList.add("carte-produit");
+    card.setAttribute("data-id", item.id);
+    card.innerHTML = generateProductHTML(item);
+    container.appendChild(card);
   });
-};
+  attachCardActions(container, items);
+}
 
-afficherProduit(produitAffciher);
+// Render default product list
+renderItems(data, productsContainer);
 
 // Recherche des produits
 const input = document.querySelector(".recherche");
@@ -41,72 +45,55 @@ input.addEventListener("keyup", (e) => {
 	);
   productsContainer.innerHTML = "";
   if (resultat.length > 0) {
-    afficherProduit(resultat);
-    actionProduit();
+    renderItems(resultat, productsContainer);
   } else {
     const vide = document.createElement("h3");
     vide.textContent = "Aucun produit trouvé";
     productsContainer.appendChild(vide);
   }
 });
-
-const actionProduit = () => {
-  // Ajout de l'action pour afficher la boite de dialogue
-  const cards = document.querySelectorAll(".carte-produit");
-
+// Attach click actions to cards in a given container using the provided items array to resolve ids
+function attachCardActions(container, items) {
+  const cards = container.querySelectorAll(".carte-produit");
   cards.forEach((card) => {
     card.addEventListener("click", () => {
-      // Selection des elements
-      const dialog = document.querySelector("dialog");
-      
+      const dialogEl = document.querySelector("dialog");
 
-      // Effacer le contenu d'avant
       const dialogContent = document.querySelector(".dialog-menu");
-
       dialogContent && dialogContent.remove();
-      dialog.showModal();
-      dialog.scrollTo(0, 0);
+      dialogEl.showModal();
+      dialogEl.scrollTo(0, 0);
       const section = document.createElement("section");
       section.classList.add("dialog-menu");
-      currentItem = data.filter((i) => i.id == card.dataset.id)[0];
-      section.innerHTML = generateDialogHTML(currentItem);
-      dialog.appendChild(section);
+      const current = items.find((i) => i.id == card.dataset.id);
+      section.innerHTML = generateDialogHTML(current);
+      dialogEl.appendChild(section);
 
-      // Rendre le bouton "commander" cliquable pour ouvrir le lien du produit
-      const btnAdd = dialog.querySelector('.ajouter');
-      if (btnAdd) {
-        btnAdd.addEventListener('click', (ev) => {
-          ev.preventDefault();
-          ev.stopPropagation();
-          const link = currentItem.liens && currentItem.liens.toString().trim() !== ''
-            ? currentItem.liens
-            : `./product.html?id=${currentItem.id}`;
-          // ouvrir dans un nouvel onglet
-          window.open(link, '_blank', 'noopener');
-        });
-      }
-
-      // Envoyer le lien du produit via WhatsApp au numéro spécifié
-      const btnWhatsapp = dialog.querySelector('.send-whatsapp');
+      // whatsapp button in dialog
+      const btnWhatsapp = dialogEl.querySelector('.send-whatsapp');
       if (btnWhatsapp) {
         btnWhatsapp.addEventListener('click', (ev) => {
           ev.preventDefault();
           ev.stopPropagation();
           const link = btnWhatsapp.getAttribute('data-product-link');
           const productName = btnWhatsapp.getAttribute('data-product-name');
-          const phoneNumber = '22890381883'; // Numéro WhatsApp sans le +
+          const phoneNumber = '22890381883';
           const message = `Bonjour, je suis intéressé par ce produit:\n${productName}\n\n${link}`;
           const encodedMessage = encodeURIComponent(message);
           const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
           window.open(whatsappUrl, '_blank', 'noopener');
         });
       }
-
     });
   });
-};
+}
 
-actionProduit();
+// Render maritime -> in the section .eglise and centrale -> .centrale to match user's request
+const egliseContainer = document.querySelector('.eglise');
+const centraleContainer = document.querySelector('.centrale');
+
+renderItems(maritimeData, egliseContainer);
+renderItems(centraleData, centraleContainer);
 // Close popover
 const btnClose = document.querySelector(".close");
 btnClose.addEventListener("click", () => {

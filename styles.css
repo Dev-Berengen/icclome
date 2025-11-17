@@ -1044,10 +1044,7 @@ footer {
   }
   
 @media screen and (max-width: 724px) {
-    .container {
-    justify-content: center;
-    max-width: 720px;
-  }
+   
       header form input {
       width: 13rem;
       padding: 0.4rem 0.1rem;
@@ -1068,16 +1065,13 @@ footer {
 
 /* ---------------------------For medium devices-------------------------- */
 @media screen and (min-width: 576px) {
-  .container {
-    justify-content: center;
-    max-width: 720px;
-  }
   .nav__list {
     justify-content: space-around;
     column-gap: 1.5rem;
   }
 }
 @media (max-width:500px) {
+  
 
   .food-rating {
     padding-top:0.5rem;
@@ -1086,10 +1080,7 @@ footer {
 /* -----------------------------For small devices--------------------------------- */
 /* Remove if you choose, the minimalist design */
 @media (max-width: 480px) {
-    .container {
-    justify-content: center;
-    max-width: 720px;
-  }
+   
     .hero h1 {
       padding-top: 2rem;
         font-size: 24px;
@@ -1229,6 +1220,10 @@ footer {
 }
 
 @media screen and (max-width: 320px) {
+  .container {
+    justify-content: center;
+    max-width: 280px;
+  }
   .nav__name {
     display: none;
   }
