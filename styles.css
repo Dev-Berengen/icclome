@@ -985,7 +985,7 @@ footer {
   
   .container {
     justify-content: center;
-    max-width: 720px;
+    max-width: 680px;
   }
   .wrapper .footer-widget,
   .wrapper .footer-widget:nth-child(1) {
