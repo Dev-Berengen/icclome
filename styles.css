@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
 /* Animation pour le hero image (utilise transform pour éviter répétition sur mobile) */
-@keyframes zoomHero {
+/* @keyframes zoomHero {
   0% { transform: scale(1); }
   50% { transform: scale(1.06); }
  100% { transform: scale(1.1); }
@@ -9,7 +9,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   @keyframes zoomHero { from { transform: none; } to { transform: none; } }
-}
+} */
 
 * {
   margin: 0;
@@ -722,7 +722,7 @@ dialog section .product-page {
 }
 
 .hero {
-    background: linear-gradient(135deg, #d0260f69 0%, #20614072 100%), url('assets/accueil/hero-img.jpg');
+    background: linear-gradient(135deg, #d0260fed 0%, #206140f3 100%), url('assets/accueil/hero-img.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -1120,9 +1120,9 @@ footer {
         font-size: 14px;
     }
 
-    .containers {
+    /* .containers {
         padding: 0 15px;
-    }
+    } */
 
     .company-info {
         padding: 15px;
@@ -1150,10 +1150,10 @@ footer {
     justify-content: center;
     width: 35px;
     height: 35px;
-    background-color: #333;
+    background-color:var(--co-tree);
     border-radius: 50%;
     text-decoration: none;
-    color: white;
+    color: var(--co-one);
     transition: background-color 0.3s;
 }
 
@@ -1162,6 +1162,7 @@ footer {
 }
 
 .footer-bottom {
+    width: 100%;
     border-top: 1px solid #333;
     padding-top: 30px;
     font-size: 14px;
