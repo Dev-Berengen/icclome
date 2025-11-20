@@ -23,8 +23,8 @@
 /* Création des valeurs que nous allons utiliser */
 * {
   --padding: 0 2rem;
-  --co-one:#333;
-  --co-two: #752782;
+  --co-one:#722;
+  --co-two:  #fcb900;
   --co-tree: #f5fbf8;
   --co-white: #fff;
   --co-dark: #222;
@@ -163,7 +163,7 @@ header form button:hover {
 
 .nav__name {
   font-size: 0.7rem;
-  color: var(--co-dark);
+  color: var(--co-one );
 }.nav__list
 .nav__name:hover {
   color: var(--co-one);
@@ -722,7 +722,7 @@ dialog section .product-page {
 }
 
 .hero {
-    background: linear-gradient(135deg, #d0260fed 0%, #206140f3 100%), url('assets/accueil/hero-img.jpg');
+    background:linear-gradient(135deg, rgb(254, 205, 165) 0%, rgb(254, 45, 45) 50%, rgb(107, 0, 62) 100%), url('assets/accueil/hero-img.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -847,7 +847,7 @@ footer {
 .footer-section h3 {
     font-size: 16px;
     margin-bottom: 15px;
-    color:var(--co-one);
+    color:var(--co-two);
 }
 
 .footer-section ul {
